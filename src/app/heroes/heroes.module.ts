@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDataService } from './hero-data.service';
+import { MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [HeroesComponent],
   imports: [
     CommonModule,
-    HeroesRoutingModule
+    MatListModule,
+    HeroesRoutingModule,
   ],
   providers: [HeroDataService]
 })

@@ -21,7 +21,6 @@ import { PathNotFoundComponent } from './path-not-found/path-not-found.component
     BrowserModule,
     MatButtonModule,
     MatToolbarModule,
-    MatToolbarModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
