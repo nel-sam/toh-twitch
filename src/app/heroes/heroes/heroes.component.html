@@ -1,8 +1,8 @@
 <div class="page-content">
   <h3>Heroes</h3>
 
-  <mat-list role="list" *ngIf="heroes && heroes.length">
-    <mat-list-item *ngFor="let hero of heroes" role="listitem">
+  <mat-list role="list" *ngIf="heroes | async">
+    <mat-list-item *ngFor="let hero of heroes | async" role="listitem">
       <div>{{ hero.name }}</div>
       <!-- <div>{{ hero.saying }}</div> -->
     </mat-list-item>
