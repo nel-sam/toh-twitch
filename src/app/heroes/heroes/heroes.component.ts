@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Hero } from '../hero';
+import { HeroDataService } from '../hero-data.service';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'toh-heroes',
   templateUrl: './heroes.component.html',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor() { }
+  heroes: Hero[];
 
-  ngOnInit() {
+  constructor(private heroDataService: HeroDataService) { }
+
+  async ngOnInit() {
+    this.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
+  getHeroes(): Observable<Hero[]> {
+    return this.heroDataService.getHeroes();
+  }
 }
