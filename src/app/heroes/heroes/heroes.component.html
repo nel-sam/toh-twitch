@@ -1,10 +1,25 @@
 <div class="page-content">
   <h3>Heroes</h3>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Heroes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ul class="heroes"  *ngIf="heroes | async">
+        <li *ngFor="let hero of heroes | async" class="item-container">
+          <div class="selectable-item">
+            <div class="badge">{{hero.id}}</div>
+            <div class="item-text">
+              <div class="name">{{hero.name}}</div>
+              <div class="saying">{{hero.saying}}</div>
+            </div>
+          </div>
+          <button mat-button mat-suffix mat-icon-button color="accent">
+              <mat-icon>delete</mat-icon>
+            </button>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
 
-  <mat-list role="list" *ngIf="heroes | async">
-    <mat-list-item *ngFor="let hero of heroes | async" role="listitem">
-      <div>{{ hero.name }}</div>
-      <!-- <div>{{ hero.saying }}</div> -->
-    </mat-list-item>
-  </mat-list>
 </div>
